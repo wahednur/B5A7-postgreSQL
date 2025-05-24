@@ -93,3 +93,5 @@ VALUES ('Derek Fox', 'Coastal Plains', '01917839303');
 
 -- Count unique species ever sighted.
 SELECT COUNT(DISTINCT species_id) as unique_species_count FROM sightings
+
+-- Find all sightings where the location includes "Pass".
