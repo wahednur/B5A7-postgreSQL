@@ -1,4 +1,4 @@
--- Active: 1747409020969@@127.0.0.1@5432@postgres
+-- Active: 1747409020969@@127.0.0.1@5432@conservation_db
 -- Create Database  Wildlife Conservation Monitoring
 
 --Step 1: Create Database
@@ -133,3 +133,15 @@ LIMIT 2;
 UPDATE species
 SET conservation_status = 'Historic'
 WHERE discovery_date < '1800-01-01';
+
+
+-- 8️ Label each sighting's time of day as 'Morning', 'Afternoon', or 'Evening'.
+SELECT
+  sighting_id,
+  CASE
+    WHEN EXTRACT(HOUR FROM sighting_time) < 12 THEN 'Morning'
+    WHEN EXTRACT(HOUR FROM sighting_time) BETWEEN 12 AND 17 THEN 'Afternoon'
+    ELSE 'Evening'
+  END AS time_of_day
+FROM sightings
+ORDER BY sighting_id;
