@@ -10,7 +10,7 @@ region VARCHAR(100) NOT NULL,
 phone VARCHAR(20) NOT NULL
 );
 
-DROP TABLE species;
+
 
 -- Create Species table
 CREATE TABLE species (
@@ -19,7 +19,6 @@ common_name VARCHAR(100),
 scientific_name VARCHAR(150),
 discovery_date DATE,
 conservation_status VARCHAR(100)
-
 );
 
 
@@ -46,3 +45,20 @@ INSERT INTO rangers (name, region, phone) VALUES
 ('Anwar Sadat', 'Rangamati Hills', '01318-889900'),
 ('Lamia Chowdhury', 'Garo Hills Zone', '01719-990011'),
 ('Rakibul Islam', 'Barisal Forest Belt', '01920-101112');
+
+-- Check rangers information
+
+SELECT * FROM rangers;
+
+-- Insert species information
+INSERT INTO species (common_name, scientific_name, discovery_date, conservation_status) VALUES
+('Bengal Tiger', 'Panthera tigris tigris', '1758-01-01', 'Endangered'),
+('Asian Elephant', 'Elephas maximus indicus', '1758-01-01', 'Endangered'),
+('Hoolock Gibbon', 'Hoolock hoolock', '1861-01-01', 'Endangered'),
+('Fishing Cat', 'Prionailurus viverrinus', '1821-01-01', 'Vulnerable'),
+('Ganges River Dolphin', 'Platanista gangetica gangetica', '1828-01-01', 'Endangered'),
+('Clouded Leopard', 'Neofelis nebulosa', '1821-01-01', 'Vulnerable'),
+('Indian Pangolin', 'Manis crassicaudata', '1822-01-01', 'Near Threatened'),
+('Leopard Cat', 'Prionailurus bengalensis', '1792-01-01', 'Least Concern'),
+('Indian Python', 'Python molurus', '1758-01-01', 'Near Threatened'),
+('Red Junglefowl', 'Gallus gallus', '1758-01-01', 'Least Concern');
