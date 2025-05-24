@@ -145,3 +145,12 @@ SELECT
   END AS time_of_day
 FROM sightings
 ORDER BY sighting_id;
+
+
+-- 9️. Delete rangers who have never sighted any species
+
+DELETE FROM rangers
+WHERE ranger_id NOT IN (
+  SELECT DISTINCT ranger_id FROM sightings
+  WHERE ranger_id IS NOT NULL
+);
