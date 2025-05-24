@@ -86,12 +86,22 @@ INSERT INTO sightings (species_id, ranger_id, location, sighting_time, notes) VA
 -- Check sightings information
 SELECT * FROM sightings;
 
--- Register a new ranger with provided data with name = 'Derek Fox' and region = 'Coastal Plains'
+-- 1. Register a new ranger with provided data with name = 'Derek Fox' and region = 'Coastal Plains'
 INSERT INTO rangers (name, region, phone)
 VALUES ('Derek Fox', 'Coastal Plains', '01917839303');
 
 
--- Count unique species ever sighted.
+-- 2. Count unique species ever sighted.
 SELECT COUNT(DISTINCT species_id) as unique_species_count FROM sightings
 
--- Find all sightings where the location includes "Pass".
+-- 3. Find all sightings where the location includes "Pass".
+SELECT * FROM sightings WHERE location ILIKE '%Pass%';
+
+
+-- 4.  List each ranger's name and their total number of sightings.
+SELECT r.name AS ranger_name,
+COUNT(s.sighting_id) AS total_sightings
+FROM rangers r
+LEFT JOIN sightings s ON r.ranger_id = s.ranger_id
+GROUP BY r.name
+ORDER BY total_sightings DESC;
