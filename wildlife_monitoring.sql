@@ -1,6 +1,9 @@
 -- Active: 1747409020969@@127.0.0.1@5432@conservation_db
 -- Create Database  Wildlife Conservation Monitoring
+
+--Step 1: Create Database
 CREATE DATABASE conservation_db;
+
 
 -- Create rangers table
 CREATE TABLE rangers (
@@ -33,6 +36,7 @@ notes TEXT
 );
 
 
+-- STEP 3: Insert Sample Data into rangers
 -- Insert rangers information
 INSERT INTO rangers (name, region, phone) VALUES
 ('Meera Akhter', 'Sundarbans West', '01711-123456'),
@@ -80,4 +84,8 @@ INSERT INTO sightings (species_id, ranger_id, location, sighting_time, notes) VA
 (10, 3, 'Nilgiri View Pass', '2024-05-19 07:05:00', 'Seen at sunrise near hill edge');
 
 -- Check sightings information
-SELECT * FROM species;
+SELECT * FROM sightings;
+
+-- Register a new ranger with provided data with name = 'Derek Fox' and region = 'Coastal Plains'
+INSERT INTO rangers (name, region, phone)
+VALUES ('Derek Fox', 'Coastal Plains', '01917839303');
