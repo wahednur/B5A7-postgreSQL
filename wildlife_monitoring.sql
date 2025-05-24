@@ -32,3 +32,17 @@ location VARCHAR(150),
 sighting_time TIMESTAMP,
 notes TEXT
 );
+
+
+-- Insert rangers information
+INSERT INTO rangers (name, region, phone) VALUES
+('Meera Akhter', 'Sundarbans West', '01711-123456'),
+('Shahadat Hossain', 'Sundarbans East', '01812-223344'),
+('Nasima Begum', 'Chittagong Hill Tracts', '01913-334455'),
+('Rezaul Karim', 'Sylhet Forest Zone', '01614-445566'),
+('Jannatul Ferdous', 'Cox''s Bazar Coastal Belt', '01715-556677'),
+('Abdul Halim', 'Lawachara National Park', '01816-667788'),
+('Farzana Yasmin', 'Modhupur Forest', '01517-778899'),
+('Anwar Sadat', 'Rangamati Hills', '01318-889900'),
+('Lamia Chowdhury', 'Garo Hills Zone', '01719-990011'),
+('Rakibul Islam', 'Barisal Forest Belt', '01920-101112');
