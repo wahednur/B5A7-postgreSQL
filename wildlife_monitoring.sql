@@ -62,3 +62,22 @@ INSERT INTO species (common_name, scientific_name, discovery_date, conservation_
 ('Leopard Cat', 'Prionailurus bengalensis', '1792-01-01', 'Least Concern'),
 ('Indian Python', 'Python molurus', '1758-01-01', 'Near Threatened'),
 ('Red Junglefowl', 'Gallus gallus', '1758-01-01', 'Least Concern');
+
+-- Check species information
+SELECT * FROM species;
+
+-- Insert sightings  information
+INSERT INTO sightings (species_id, ranger_id, location, sighting_time, notes) VALUES
+(1, 1, 'Snowfall Pass', '2024-05-10 07:45:00', 'Camera trap image captured'),
+(2, 2, 'Sundarban East', '2024-05-11 14:25:00', 'Fresh paw prints found'),
+(3, 3, 'Madhupur Range Pass', '2024-05-12 09:10:00', 'Group of 3 seen crossing path'),
+(4, 4, 'Bandarban Hill Track', '2024-05-13 15:40:00', 'Heard trumpeting from far'),
+(5, 1, 'Tiger Pass', '2024-05-14 06:30:00', 'Sighting confirmed with binoculars'),
+(6, 2, 'Lawachara Forest', '2024-05-15 17:55:00', 'Juvenile animal observed'),
+(7, 3, 'Kaptai Pass Trail', '2024-05-16 11:20:00', 'Animal resting under bush'),
+(8, 1, 'Chittagong Hill Pass', '2024-05-17 13:35:00', 'Claw marks on tree trunk'),
+(9, 2, 'Rema-Kalenga Reserve', '2024-05-18 16:45:00', NULL),
+(10, 3, 'Nilgiri View Pass', '2024-05-19 07:05:00', 'Seen at sunrise near hill edge');
+
+-- Check sightings information
+SELECT * FROM species;
