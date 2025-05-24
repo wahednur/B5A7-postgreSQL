@@ -1,8 +1,9 @@
--- Active: 1747409020969@@127.0.0.1@5432@conservation_db
+-- Active: 1747409020969@@127.0.0.1@5432@postgres
 -- Create Database  Wildlife Conservation Monitoring
 
 --Step 1: Create Database
 CREATE DATABASE conservation_db;
+DROP DATABASE conservation_db;
 
 
 -- Create rangers table
@@ -57,31 +58,36 @@ SELECT * FROM rangers;
 -- Insert species information
 INSERT INTO species (common_name, scientific_name, discovery_date, conservation_status) VALUES
 ('Bengal Tiger', 'Panthera tigris tigris', '1758-01-01', 'Endangered'),
-('Asian Elephant', 'Elephas maximus indicus', '1758-01-01', 'Endangered'),
-('Hoolock Gibbon', 'Hoolock hoolock', '1861-01-01', 'Endangered'),
-('Fishing Cat', 'Prionailurus viverrinus', '1821-01-01', 'Vulnerable'),
-('Ganges River Dolphin', 'Platanista gangetica gangetica', '1828-01-01', 'Endangered'),
+('Asian Elephant', 'Elephas maximus', '1758-01-01', 'Endangered'),
+('Hoolock Gibbon', 'Hoolock hoolock', '1867-01-01', 'Vulnerable'),
+('Fishing Cat', 'Prionailurus viverrinus', '1820-01-01', 'Vulnerable'),
+('Ganges River Dolphin', 'Platanista gangetica', '1801-01-01', 'Endangered'),
 ('Clouded Leopard', 'Neofelis nebulosa', '1821-01-01', 'Vulnerable'),
-('Indian Pangolin', 'Manis crassicaudata', '1822-01-01', 'Near Threatened'),
+('Pangolin', 'Manis crassicaudata', '1822-01-01', 'Critically Endangered'),
 ('Leopard Cat', 'Prionailurus bengalensis', '1792-01-01', 'Least Concern'),
 ('Indian Python', 'Python molurus', '1758-01-01', 'Near Threatened'),
+('Saltwater Crocodile', 'Crocodylus porosus', '1801-01-01', 'Vulnerable'),
+('Jungle Cat', 'Felis chaus', '1776-01-01', 'Least Concern'),
+('Sloth Bear', 'Melursus ursinus', '1791-01-01', 'Vulnerable'),
 ('Red Junglefowl', 'Gallus gallus', '1758-01-01', 'Least Concern');
+
+
+
+
 
 -- Check species information
 SELECT * FROM species;
 
 -- Insert sightings  information
 INSERT INTO sightings (species_id, ranger_id, location, sighting_time, notes) VALUES
-(1, 1, 'Snowfall Pass', '2024-05-10 07:45:00', 'Camera trap image captured'),
-(2, 2, 'Sundarban East', '2024-05-11 14:25:00', 'Fresh paw prints found'),
-(3, 3, 'Madhupur Range Pass', '2024-05-12 09:10:00', 'Group of 3 seen crossing path'),
-(4, 4, 'Bandarban Hill Track', '2024-05-13 15:40:00', 'Heard trumpeting from far'),
-(5, 1, 'Tiger Pass', '2024-05-14 06:30:00', 'Sighting confirmed with binoculars'),
-(6, 2, 'Lawachara Forest', '2024-05-15 17:55:00', 'Juvenile animal observed'),
-(7, 3, 'Kaptai Pass Trail', '2024-05-16 11:20:00', 'Animal resting under bush'),
-(8, 1, 'Chittagong Hill Pass', '2024-05-17 13:35:00', 'Claw marks on tree trunk'),
-(9, 2, 'Rema-Kalenga Reserve', '2024-05-18 16:45:00', NULL),
-(10, 3, 'Nilgiri View Pass', '2024-05-19 07:05:00', 'Seen at sunrise near hill edge');
+(1, 1, 'Sundarban Pass', '2024-05-10 07:45:00', 'Seen near the river'),
+(2, 2, 'Hilltop Zone', '2024-05-12 16:20:00', 'Pair observed'),
+(3, 3, 'Forest Edge', '2024-05-15 09:10:00', 'Tracks found'),
+(5, 1, 'Gibbon Valley', '2024-05-18 18:30:00', 'Group vocalizing'),
+(7, 2, 'Coastal Pass', '2024-05-20 11:00:00', 'Juvenile spotted');
+
+
+
 
 -- Check sightings information
 SELECT * FROM sightings;
@@ -105,3 +111,21 @@ FROM rangers r
 LEFT JOIN sightings s ON r.ranger_id = s.ranger_id
 GROUP BY r.name
 ORDER BY total_sightings DESC;
+
+
+-- 5. List species that have never been sighted.
+SELECT sp.common_name
+FROM species sp
+LEFT JOIN sightings si ON sp.species_id = si.species_id
+WHERE si.sighting_id IS NULL;
+
+
+
+-- 6️⃣ Show the most recent 2 sightings.
+
+SELECT sp.common_name, si.sighting_time, r.name
+FROM sightings si
+JOIN species sp ON si.species_id = sp.species_id
+JOIN rangers r ON si.ranger_id = r.ranger_id
+ORDER BY si.sighting_time DESC
+LIMIT 2;
