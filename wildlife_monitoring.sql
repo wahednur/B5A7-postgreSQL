@@ -119,9 +119,7 @@ FROM species sp
 LEFT JOIN sightings si ON sp.species_id = si.species_id
 WHERE si.sighting_id IS NULL;
 
-
-
--- 6️⃣ Show the most recent 2 sightings.
+-- 6️ Show the most recent 2 sightings.
 
 SELECT sp.common_name, si.sighting_time, r.name
 FROM sightings si
@@ -129,3 +127,9 @@ JOIN species sp ON si.species_id = sp.species_id
 JOIN rangers r ON si.ranger_id = r.ranger_id
 ORDER BY si.sighting_time DESC
 LIMIT 2;
+
+
+-- 7. Update all species discovered before year 1800 to have status 'Historic'.
+UPDATE species
+SET conservation_status = 'Historic'
+WHERE discovery_date < '1800-01-01';
