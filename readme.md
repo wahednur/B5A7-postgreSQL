@@ -113,7 +113,10 @@ CREATE TABLE users (
     username VARCHAR(30),  -- Variable name
     bio VARCHAR(255)       -- Optional long text
 );
+
 ```
+
+---
 
 ## 5. **Explain the purpose of the WHERE clause in a SELECT statement.**
 
@@ -151,6 +154,7 @@ SELECT name FROM students WHERE age > 18;
 সক্রিয় ইউজার (যেখানে active = true)
 
 ** 📌 মনে রাখবেন: **
+
 SELECT দিয়ে আপনি বলেন "কি আনবেন?"
 
 WHERE দিয়ে বলেন "কি শর্তে আনবেন?"
