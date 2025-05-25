@@ -6,6 +6,7 @@ CREATE DATABASE conservation_db;
 DROP DATABASE conservation_db;
 
 
+
 -- Create rangers table
 CREATE TABLE rangers (
 ranger_id SERIAL PRIMARY KEY,
