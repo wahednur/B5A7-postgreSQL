@@ -185,13 +185,9 @@ I believe in writing clean, maintainable code and love transforming ideas into r
 
 **Others:** Markdown, VS Code, CLI
 
----
-
 ## 📁 Featured Projects
 
 Personal Portfolio Website (Coming soon)
-
----
 
 ## Connect With Me
 
