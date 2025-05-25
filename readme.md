@@ -163,15 +163,6 @@ WHERE দিয়ে বলেন "কি শর্তে আনবেন?"
 
 ## Abdul Wahed Nur
 
-## Contact Information
-
-- **Email:** [wahednur@gmail.com](mailto:wahednur@gmail.com)
-- **Mobile:** +880 1917-839303
-- **Website:** Coming soon
-- **Portfolio:** Coming soon
-
----
-
 ## About
 
 I’m Abdul Wahed Nur, an enthusiastic and self-driven learner passionate about full-stack development, database systems, and real-world problem solving. Currently expanding my skills in PostgreSQL, JavaScript, and modern web technologies while building a solid foundation in back-end development.
@@ -204,6 +195,6 @@ Personal Portfolio Website (Coming soon)
 
 ## Connect With Me
 
-[Email](mailto:wahednur@gmail.com) | [LinkedIn](https://www.linkedin.com/in/wahednur/) | [GitHub](https://github.com/wahednur)
+[Email](mailto:wahednur@gmail.com) | [LinkedIn](https://www.linkedin.com/in/wahednur/) | [GitHub](https://github.com/wahednur) | Mobile: +88 01917839303
 
 _Note: Website and portfolio links will be updated soon._
