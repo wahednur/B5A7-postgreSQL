@@ -171,8 +171,6 @@ I believe in writing clean, maintainable code and love transforming ideas into r
 
 **_ Currently working on my personal website and portfolio. Stay tuned for updates! _**
 
----
-
 ## Skills & Expertise
 
 **Languages:** SQL, JavaScript, TypeScript, Python (learning)
